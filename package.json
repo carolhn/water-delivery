@@ -1,19 +1,20 @@
 {
   "name": "water-delivery",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/server.ts",
+  "repository": "git@github.com:carolhn/water-delivery.git",
+  "author": "Caroline Nunes <nunescaroline905@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "dev": "ts-node-dev . --inspect --transpile-only --ignore-watch node_modules",
     "lint": "eslint \"**/*.ts\"",
     "lint-fix": "eslint \"**/*.ts\" --fix"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.4",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
@@ -21,11 +22,16 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "5.2.1",
     "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@eslint/js": "^9.10.0"
+    "@eslint/js": "^9.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-async-errors": "^3.1.1"
   }
 }
