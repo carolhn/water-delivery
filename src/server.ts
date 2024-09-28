@@ -5,12 +5,17 @@ import app from './app';
 
 const PORT = process.env.PORT || 5333;
 
-AppDataSource.initialize().then(() => {
-  console.log('Database connected🔗');
+const startServer = async () => {
+    try {
+        await AppDataSource.initialize();
+        console.log('Database connected🔗');
 
-  app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}💧`);
-  });
-}).catch((err) => {
-  console.error('Database connection failed❌', err);
-});
+        app.listen(PORT, () => {
+            console.log(`Server started on port ${PORT}💧`);
+        });
+    } catch (err: any) {
+        console.error('Database connection failed ❌', err.message, err.stack);
+    }
+};
+
+startServer();
